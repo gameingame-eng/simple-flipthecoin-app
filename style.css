@@ -5,32 +5,161 @@
     font-weight: 700;
 }
 
+:root {
+    --bg-top: #f8efe0;
+    --bg-bottom: #d7c3a6;
+    --panel: rgba(255, 248, 235, 0.82);
+    --panel-border: rgba(126, 86, 34, 0.18);
+    --text-main: #2d1d0d;
+    --text-soft: #725638;
+    --accent: #a45a1c;
+    --accent-dark: #6a3210;
+    --shadow: 0 24px 60px rgba(71, 43, 16, 0.2);
+}
+
 .f {
     font-family: "Montserrat Bold Remote", Arial, sans-serif;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 24px;
     font-family: Arial, sans-serif;
+    color: var(--text-main);
+    background:
+        radial-gradient(circle at top left, rgba(255, 255, 255, 0.6), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(145, 89, 31, 0.18), transparent 32%),
+        linear-gradient(160deg, var(--bg-top), var(--bg-bottom));
+}
+
+.app-shell {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.app-card {
+    width: min(100%, 520px);
+    padding: 32px 28px;
     text-align: center;
-    margin-top: 40px;
+    border: 1px solid var(--panel-border);
+    border-radius: 28px;
+    background: var(--panel);
+    backdrop-filter: blur(14px);
+    box-shadow: var(--shadow);
+}
+
+.eyebrow {
+    margin: 0 0 10px;
+    font-size: 0.78rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.hero-title {
+    margin: 0;
+    font-size: clamp(2.3rem, 8vw, 4rem);
+    line-height: 0.95;
+}
+
+.hero-copy {
+    margin: 14px auto 0;
+    max-width: 28ch;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-soft);
+}
+
+.coin-wrap {
+    margin-top: 28px;
 }
 
 .coin {
-    width: 120px;
-    height: 120px;
-    margin: 20px auto;
+    width: 180px;
+    height: 180px;
+    margin: 0 auto;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: bold;
-    font-size: 24px;
+    font-size: 1.7rem;
+    letter-spacing: 0.06em;
     text-transform: capitalize;
     color: #4a3200;
-    background: radial-gradient(circle at 30% 30%, #ffe08a, #d7a400 70%);
-    border: 4px solid #8c6a00;
-    box-shadow: inset 0 4px 10px rgba(255, 255, 255, 0.45), 0 8px 16px rgba(0, 0, 0, 0.18);
+    background:
+        radial-gradient(circle at 30% 28%, #fff5c0 0%, #f6d25a 26%, #cf8f09 70%, #8f5800 100%);
+    border: 6px solid #8c5c00;
+    box-shadow:
+        inset 0 8px 18px rgba(255, 255, 255, 0.42),
+        inset 0 -12px 18px rgba(107, 62, 0, 0.18),
+        0 18px 30px rgba(79, 49, 7, 0.28);
     transform-style: preserve-3d;
+    position: relative;
+}
+
+.coin::before {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 245, 197, 0.5);
+}
+
+.result-text {
+    min-height: 1.5em;
+    margin: 18px 0 0;
+    font-size: 1rem;
+    letter-spacing: 0.03em;
+    color: var(--accent-dark);
+}
+
+.flip-button {
+    margin-top: 28px;
+    border: 0;
+    border-radius: 999px;
+    padding: 14px 28px;
+    font-size: 1rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #fff9f0;
+    background: linear-gradient(180deg, #bf6e26, #8b4614);
+    box-shadow: 0 14px 24px rgba(117, 63, 18, 0.28);
+    cursor: pointer;
+    transition: transform 160ms ease, box-shadow 160ms ease, filter 160ms ease;
+}
+
+.flip-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 28px rgba(117, 63, 18, 0.34);
+    filter: brightness(1.03);
+}
+
+.flip-button:active {
+    transform: translateY(1px);
+}
+
+.credit-text {
+    margin: 24px 0 0;
+    font-size: 0.92rem;
+    color: var(--text-soft);
+}
+
+.credit-link {
+    color: var(--accent-dark);
+    text-decoration-color: rgba(106, 50, 16, 0.35);
+    text-underline-offset: 0.18em;
+}
+
+.credit-link:hover {
+    text-decoration-color: currentColor;
 }
 
 .coin.flipping {
@@ -46,5 +175,21 @@ body {
     }
     100% {
         transform: rotateY(1800deg) scale(1);
+    }
+}
+
+@media (max-width: 520px) {
+    .app-card {
+        padding: 28px 20px;
+    }
+
+    .coin {
+        width: 150px;
+        height: 150px;
+        font-size: 1.4rem;
+    }
+
+    .flip-button {
+        width: 100%;
     }
 }

@@ -1,15 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flip the Coin!</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1 class="f">Flip the Coin!</h1>
-    <div class="coin" id="coin" aria-live="polite">?</div>
-    <p id="result"></p>
-    <button class="f" onclick="flipCoin()">Flip Coin</button>
-    <p class="f">Font credit: <a href="https://github.com/JulietaUla/Montserrat/raw/refs/heads/master/fonts/webfonts/Montserrat-Bold.woff2">Montserrat Bold</a></p>
+    <main class="app-shell">
+        <section class="app-card">
+            <p class="eyebrow f">Random outcome generator</p>
+            <h1 class="hero-title f">Flip the Coin!</h1>
+            <p class="hero-copy">One click. One spin. Heads or tails.</p>
+
+            <div class="coin-wrap">
+                <div class="coin f" id="coin" aria-live="polite">?</div>
+                <p class="result-text f" id="result">Ready to flip</p>
+            </div>
+
+            <button class="flip-button f" onclick="flipCoin()">Flip Coin</button>
+
+            <p class="credit-text">
+                Font credit:
+                <a class="credit-link f" href="https://github.com/JulietaUla/Montserrat/raw/refs/heads/master/fonts/webfonts/Montserrat-Bold.woff2">Montserrat Bold</a>
+            </p>
+        </section>
+    </main>
     <script src="script.js"></script>
 </body>
 </html> 
