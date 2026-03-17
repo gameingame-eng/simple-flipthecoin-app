@@ -56,6 +56,13 @@ body {
     box-shadow: var(--shadow);
 }
 
+.app-logo {
+    width: 92px;
+    height: 92px;
+    display: block;
+    margin: 0 auto 18px;
+}
+
 .eyebrow {
     margin: 0 0 10px;
     font-size: 0.78rem;

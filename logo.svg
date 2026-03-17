@@ -1,0 +1,38 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="84" y1="56" x2="434" y2="454" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF3D1"/>
+      <stop offset="1" stop-color="#D59A2F"/>
+    </linearGradient>
+    <radialGradient id="coinFace" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(204 156) rotate(51.3) scale(247.587)">
+      <stop stop-color="#FFF8D9"/>
+      <stop offset="0.35" stop-color="#F8D769"/>
+      <stop offset="0.72" stop-color="#D49212"/>
+      <stop offset="1" stop-color="#8A5200"/>
+    </radialGradient>
+    <linearGradient id="mark" x1="173" y1="181" x2="349" y2="337" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6E3A0B"/>
+      <stop offset="1" stop-color="#3C1C00"/>
+    </linearGradient>
+    <filter id="shadow" x="72" y="88" width="368" height="336" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="18"/>
+      <feGaussianBlur stdDeviation="18"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.364706 0 0 0 0 0.207843 0 0 0 0 0.0392157 0 0 0 0.3 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_2"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_2" result="shape"/>
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="120" fill="#F4E6CC"/>
+  <circle cx="108" cy="96" r="64" fill="#FFF7E5" fill-opacity="0.7"/>
+  <circle cx="424" cy="404" r="78" fill="#B56C25" fill-opacity="0.14"/>
+  <g filter="url(#shadow)">
+    <circle cx="256" cy="238" r="150" fill="url(#bg)"/>
+    <circle cx="256" cy="238" r="136" fill="url(#coinFace)" stroke="#8B5700" stroke-width="10"/>
+    <circle cx="256" cy="238" r="112" stroke="#FFF1B8" stroke-opacity="0.5" stroke-width="4"/>
+    <path d="M213 162C235.667 146.667 264 139 298 139C302.667 139 307 139.167 311 139.5C289.667 151.5 275 169.667 267 194C255.667 228 260.333 256.333 281 279C301.667 301.667 302 325 282 349C269.333 364.333 251 376 227 384C245 367.333 254.667 350.333 256 333C257.333 315 250.667 298.667 236 284C213.333 261.333 206 235.667 214 207C218 193.667 224.333 182 233 172C226.333 174.667 219.667 178 213 182V162Z" fill="url(#mark)"/>
+    <path d="M302 154C328 166.667 346.667 186.667 358 214C369.333 241.333 368 270 354 300C340.667 328.667 317.667 352.333 285 371C302.333 351 309.667 330.333 307 309C304.333 288.333 293 268.667 273 250C257 234.667 250 217 252 197C254 176.333 270.667 162 302 154Z" fill="#FFF4CB" fill-opacity="0.42"/>
+  </g>
+  <text x="256" y="456" text-anchor="middle" fill="#6B3A11" font-family="Montserrat, Arial, sans-serif" font-size="44" font-weight="700" letter-spacing="0.18em">FLIP</text>
+</svg>
